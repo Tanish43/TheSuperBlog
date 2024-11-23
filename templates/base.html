@@ -93,17 +93,14 @@
             <h2>Subscribe</h2>
             <div class="newsletter">
               <form method="POST">
-                <input
-                  type="email"
-                  name="email"
-                  maxlength="100"
-                  placeholder="Enter your email"
-                  required=""
-                  id="id_email"
-                />
+                {% csrf_token %}
+                {{subscribe_form}}
                 <button class="btn btn-primary">Subscribe</button>
               </form>
             </div>
+            {% if subscribe_successful %}
+            <br><p>Subscribed Successfully</p>
+            {% endif %}
           </div>
         </div>
         <div class="share">
@@ -114,7 +111,7 @@
             <a href="#">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/tanishsharma43/">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
             <a href="#">
